@@ -1,0 +1,24 @@
+<div class="terminal-window">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <div class="terminal-title">{{ .Get "title" | default "Terminal" }}</div>
+        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+    </div>
+    <div class="terminal-body">
+        <pre><code>{{ .Inner | safeHTML }}</code></pre>
+    </div>
+</div>
+
+<script>
+    function copyCode(button) {
+        const code = button.closest('.terminal-window').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            button.innerText = 'Copied!';
+            setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+        });
+    }
+</script>

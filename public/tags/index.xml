@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Quantized Quality by Chathura S.R</title>
+    <link>http://localhost:49809/quantized-quality-blog/tags/</link>
+    <description>Recent content in Tags on Quantized Quality by Chathura S.R</description>
+    <generator>Hugo -- 0.156.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Feb 2026 10:30:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:49809/quantized-quality-blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/ai/</link>
+      <pubDate>Tue, 24 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coding</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/coding/</link>
+      <pubDate>Tue, 24 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/coding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/development/</link>
+      <pubDate>Tue, 24 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llama-Cpp</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/llama-cpp/</link>
+      <pubDate>Tue, 24 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/llama-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Local-Llm</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/local-llm/</link>
+      <pubDate>Tue, 24 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/local-llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/automation/</link>
+      <pubDate>Mon, 23 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Playwright</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/playwright/</link>
+      <pubDate>Mon, 23 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/playwright/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>http://localhost:49809/quantized-quality-blog/tags/testing/</link>
+      <pubDate>Mon, 23 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:49809/quantized-quality-blog/tags/testing/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
