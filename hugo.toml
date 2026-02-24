@@ -5,3 +5,8 @@ theme = 'PaperMod'
 
 [params]
   author = "Chathura S.R"
+  enableGitInfo = false
+  ShowPostThumbnails = true
+
+[params.profileMode]
+  enabled = false
