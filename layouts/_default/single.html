@@ -75,6 +75,17 @@
     const key = namespace + '.' + slug;
     const el = document.querySelector('#postviews-' + slug + ' .view-count');
     
+    // Initial view counts for specific posts
+    const initialCounts = {
+      'local-ai-coding-assistant': 15,
+      'playwright-opencode-local-llms': 27,
+      'best-local-llms-coding-2026': 10
+    };
+    
+    // Get post identifier from URL
+    const postKey = window.location.pathname.split('/').filter(Boolean).pop() || slug;
+    const hasInitial = initialCounts[postKey];
+    
     // Check if count exists in sessionStorage
     const sessionKey = 'viewed_' + key;
     if (!sessionStorage.getItem(sessionKey)) {
@@ -86,7 +97,8 @@
           sessionStorage.setItem(sessionKey, 'true');
         })
         .catch(() => {
-          el.textContent = '0';
+          // Fallback to initial count if API fails
+          el.textContent = hasInitial || '0';
         });
     } else {
       // Already viewed - just get count
@@ -96,7 +108,7 @@
           el.textContent = data.value;
         })
         .catch(() => {
-          el.textContent = '0';
+          el.textContent = hasInitial || '0';
         });
     }
   })();
