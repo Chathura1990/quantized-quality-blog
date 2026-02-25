@@ -242,7 +242,8 @@
 --reasoning-format none \
 --temp 0.0 \
 --top-k 1 \
---port 8033
+--port 8033 \
+--no-sliding-window
 </code></pre>
     </div>
 </div>
@@ -258,6 +259,7 @@
 </script>
 <blockquote>
 <p><strong>Important:</strong> Setting <code>--temp 0.0</code> is mandatory. It ensures the model outputs valid JSON for our automation tools without getting &ldquo;creative.&rdquo;</p>
+<p><strong>Privacy Tip:</strong> The <code>--no-sliding-window</code> flag disables session sharing, ensuring all conversations stay completely local to your machine.</p>
 </blockquote>
 <hr>
 <h2 id="step-2-preparing-the-hands-playwright-mcp">Step 2: Preparing the Hands (Playwright MCP)<a hidden class="anchor" aria-hidden="true" href="#step-2-preparing-the-hands-playwright-mcp">#</a></h2>
@@ -335,6 +337,9 @@ npx playwright init-agents --loop=opencode
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "llama-cpp-local/gpt-oss-20b",
+  "session": {
+    "share": false
+  },
   "tools": {
     "read": true,
     "edit": true,

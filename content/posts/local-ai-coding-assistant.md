@@ -50,10 +50,13 @@ Create a script named `start-ai.sh`.
 --reasoning-format none \
 --temp 0.0 \
 --top-k 1 \
---port 8033
+--port 8033 \
+--no-sliding-window
 {{< /terminal >}}
 
 > **Important:** Setting `--temp 0.0` is mandatory. It ensures the model outputs valid code without getting "creative."
+>
+> **Privacy Tip:** The `--no-sliding-window` flag disables session sharing, ensuring all conversations stay completely local to your machine.
 
 ---
 
@@ -65,6 +68,9 @@ OpenCode is your "AI pair programmer." We need to point it to our local llama.cp
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "llama-cpp-local/gpt-oss-20b",
+  "session": {
+    "share": false
+  },
   "tools": {
     "read": true,
     "write": true,
