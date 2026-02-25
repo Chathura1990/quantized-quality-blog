@@ -1,0 +1,105 @@
+{{- define "main" }}
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">
+      {{ .Title }}
+      {{- if .Draft }}
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+      {{- end }}
+    </h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      <span class="postviews" id="postviews-{{ .File.UniqueID }}">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" fill="currentColor" style="vertical-align: middle; margin-right: 4px;">
+          <path d="M480 320q-66 0-124.5 25.5T231 411q-54 54-79.5 112.5T120 640q0 78 35.5 149t96.5 121q61 50 135.5 75.5T480 960q78 0 149-25.5t121-75.5q50-60 75.5-132T840 640q0 86-40.5 162T684 914Q604 864 538 819t-58-52.5T380 680q-54-54-80.5-112.5T260 432q0 66 25.5 124.5T380 680h100q16-38 38.5-71.5T563 544q54-54 81-113T680 320q0 78-35 149t-96 121q-60 50-134.5 75.5T300 640h180Z"/>
+        </svg>
+        <span class="view-count">...</span>
+      </span>
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <ul class="post-tags">
+      {{- range ($.GetTerms $tags) }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
+    {{- end }}
+  </footer>
+
+  {{- if (.Param "comments") }}
+  {{- partial "comments.html" . }}
+  {{- end }}
+</article>
+
+<script>
+  (function() {
+    const namespace = 'quantized-quality';
+    const slug = '{{ .File.UniqueID }}';
+    const key = namespace + '.' + slug;
+    const el = document.querySelector('#postviews-' + slug + ' .view-count');
+    
+    // Check if count exists in sessionStorage
+    const sessionKey = 'viewed_' + key;
+    if (!sessionStorage.getItem(sessionKey)) {
+      // First view - increment count
+      fetch('https://api.countapi.xyz/hit/' + key)
+        .then(response => response.json())
+        .then(data => {
+          el.textContent = data.value;
+          sessionStorage.setItem(sessionKey, 'true');
+        })
+        .catch(() => {
+          el.textContent = '0';
+        });
+    } else {
+      // Already viewed - just get count
+      fetch('https://api.countapi.xyz/get/' + key)
+        .then(response => response.json())
+        .then(data => {
+          el.textContent = data.value;
+        })
+        .catch(() => {
+          el.textContent = '0';
+        });
+    }
+  })();
+</script>
+
+{{- end }}{{/* end main */}}
