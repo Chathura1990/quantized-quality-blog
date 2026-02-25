@@ -22,7 +22,12 @@
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
-      <span class="postviews" id="postviews-{{ .File.UniqueID }}">
+      <span class="postviews" id="postviews-{{ .File.BaseFileName }}">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" fill="currentColor" style="vertical-align: middle; margin-right: 4px;">
+          <path d="M480 320q-66 0-124.5 25.5T231 411q-54 54-79.5 112.5T120 640q0 78 35.5 149t96.5 121q61 50 135.5 75.5T480 960q78 0 149-25.5t121-75.5q50-60 75.5-132T840 640q0 86-40.5 162T684 914Q604 864 538 819t-58-52.5T380 680q-54-54-80.5-112.5T260 432q0 66 25.5 124.5T380 680h100q16-38 38.5-71.5T563 544q54-54 81-113T680 320q0 78-35 149t-96 121q-60 50-134.5 75.5T300 640h180Z"/>
+        </svg>
+        <span class="view-count">...</span>
+      </span>
         <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 -960 960 960" fill="currentColor" style="vertical-align: middle; margin-right: 4px;">
           <path d="M480 320q-66 0-124.5 25.5T231 411q-54 54-79.5 112.5T120 640q0 78 35.5 149t96.5 121q61 50 135.5 75.5T480 960q78 0 149-25.5t121-75.5q50-60 75.5-132T840 640q0 86-40.5 162T684 914Q604 864 538 819t-58-52.5T380 680q-54-54-80.5-112.5T260 432q0 66 25.5 124.5T380 680h100q16-38 38.5-71.5T563 544q54-54 81-113T680 320q0 78-35 149t-96 121q-60 50-134.5 75.5T300 640h180Z"/>
         </svg>
@@ -71,29 +76,25 @@
 <script>
   (function() {
     const namespace = 'quantized-quality';
-    const slug = '{{ .File.UniqueID }}';
+    const slug = '{{ .File.BaseFileName }}';
     const key = namespace + '.' + slug;
     const el = document.querySelector('#postviews-' + slug + ' .view-count');
     
-    // Initial view counts for specific posts
-    const initialCounts = {
-      'local-ai-coding-assistant': 15,
-      'playwright-opencode-local-llms': 27,
-      'best-local-llms-coding-2026': 10
-    };
-    
-    // Get post identifier from URL
-    const postKey = window.location.pathname.split('/').filter(Boolean).pop() || slug;
-    const hasInitial = initialCounts[postKey];
+    console.log('View counter key:', key);
     
     // Always increment on every page load/refresh
     fetch('https://api.countapi.xyz/hit/' + key)
-      .then(response => response.json())
+      .then(response => {
+        console.log('API response:', response);
+        return response.json();
+      })
       .then(data => {
+        console.log('View count:', data.value);
         el.textContent = data.value;
       })
-      .catch(() => {
-        el.textContent = hasInitial || '0';
+      .catch(err => {
+        console.error('Count API error:', err);
+        el.textContent = '0';
       });
   })();
 </script>
