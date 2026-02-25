@@ -86,31 +86,15 @@
     const postKey = window.location.pathname.split('/').filter(Boolean).pop() || slug;
     const hasInitial = initialCounts[postKey];
     
-    // Check if count exists in sessionStorage
-    const sessionKey = 'viewed_' + key;
-    if (!sessionStorage.getItem(sessionKey)) {
-      // First view - increment count
-      fetch('https://api.countapi.xyz/hit/' + key)
-        .then(response => response.json())
-        .then(data => {
-          el.textContent = data.value;
-          sessionStorage.setItem(sessionKey, 'true');
-        })
-        .catch(() => {
-          // Fallback to initial count if API fails
-          el.textContent = hasInitial || '0';
-        });
-    } else {
-      // Already viewed - just get count
-      fetch('https://api.countapi.xyz/get/' + key)
-        .then(response => response.json())
-        .then(data => {
-          el.textContent = data.value;
-        })
-        .catch(() => {
-          el.textContent = hasInitial || '0';
-        });
-    }
+    // Always increment on every page load/refresh
+    fetch('https://api.countapi.xyz/hit/' + key)
+      .then(response => response.json())
+      .then(data => {
+        el.textContent = data.value;
+      })
+      .catch(() => {
+        el.textContent = hasInitial || '0';
+      });
   })();
 </script>
 
