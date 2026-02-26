@@ -77,37 +77,87 @@ OpenCode is your "AI pair programmer." We need to point it to our local llama.cp
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "llama-cpp-local/gpt-oss-20b",
-  "session": {
-    "share": false
-  },
+  "small_model": "llama-cpp-local/qwen2.5-coder-14b",
+  "permission": "allow",
+  "theme": "opencode",
+  "share": "disabled",
   "tools": {
     "read": true,
-    "write": true,
     "edit": true,
+    "write": true,
+    "patch": true,
     "bash": true,
-    "list": true,
     "grep": true,
-    "search": true,
     "glob": true,
-    "task": true
+    "list": true,
+    "webfetch": true,
+    "todowrite": true,
+    "todoread": true
   },
   "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "Standard development agent for making file changes."
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
+    },
     "general": {
       "mode": "subagent",
-      "model": "llama-cpp-local/gpt-oss-20b"
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "General-purpose subagent for complex research and tasks."
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "Read-only subagent for exploring codebases."
+    }
+  },
+  "mcp": {
+    "playwright-test": {
+      "type": "local",
+      "command": [
+        "npx",
+        "playwright",
+        "run-test-mcp-server"
+      ],
+      "enabled": true
     }
   },
   "provider": {
     "llama-cpp-local": {
       "npm": "@ai-sdk/openai-compatible",
+      "name": "Local llama.cpp",
       "options": {
         "baseURL": "http://127.0.0.1:8033/v1",
-        "apiKey": "not-needed"
+        "apiKey": "not-needed",
+        "timeout": 300000
       },
       "models": {
         "gpt-oss-20b": {
-          "name": "Local GPT-OSS",
-          "tool_call": true
+          "name": "GPT-OSS 20B",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
+        },
+        "qwen2.5-coder-14B": {
+          "name": "Qwen2.5-Coder-14B",
+          "tool_call": true,
+          "tools": {
+            "task": true,
+            "limit": {
+              "context": 131072,
+              "output": 4096
+            }
+          }
         }
       }
     }
