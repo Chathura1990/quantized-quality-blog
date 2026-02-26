@@ -15,6 +15,15 @@ In modern software testing, AI agents are revolutionizing how we write, run, and
 
 What if you could have the power of a Senior QA Agent living entirely on your local machine? In this guide, we will build a **100% local AI testing stack** that requires no internet connection and keeps your proprietary code private.
 
+### Tested On
+
+| Computer | Specifications |
+|----------|----------------|
+| **MacBook Pro** | Apple M4 Pro chip, 24 GB RAM, connected to 2 external monitors |
+| **Windows Desktop** | Intel Core i7-13700H (13th Gen), 32 GB RAM, Intel Iris Xe Graphics (15.9 GB shared memory), Windows 11 Pro |
+
+Both setups ran the local LLM without any issues.
+
 ---
 
 ## The Tech Stack

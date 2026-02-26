@@ -15,6 +15,15 @@ Every line of code you write is intellectual property. When you use cloud-based 
 
 In this guide, we'll build a **100% local AI coding assistant** that runs entirely on your machine. No internet required, no data leaves your computer—just you and your AI pair programmer.
 
+### Tested On
+
+| Computer | Specifications |
+|----------|----------------|
+| **MacBook Pro** | Apple M4 Pro chip, 24 GB RAM, connected to 2 external monitors |
+| **Windows Desktop** | Intel Core i7-13700H (13th Gen), 32 GB RAM, Intel Iris Xe Graphics (15.9 GB shared memory), Windows 11 Pro |
+
+Both setups ran the local LLM without any issues.
+
 ---
 
 ## The Tech Stack
