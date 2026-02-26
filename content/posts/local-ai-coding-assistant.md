@@ -148,7 +148,7 @@ OpenCode is your "AI pair programmer." We need to point it to our local llama.cp
             "output": 4096
           }
         },
-        "qwen2.5-coder-14B": {
+        "qwen2.5-coder-14b": {
           "name": "Qwen2.5-Coder-14B",
           "tool_call": true,
           "tools": {

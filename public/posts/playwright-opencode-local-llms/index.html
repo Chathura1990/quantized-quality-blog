@@ -124,7 +124,10 @@
             <span class="details">Table of Contents</span>
         </summary>
 
-        <div class="inner"><ul>
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#tested-on" aria-label="Tested On">Tested On</a></li></ul>
+                    
                 <li>
                     <a href="#the-tech-stack" aria-label="The Tech Stack">The Tech Stack</a></li>
                 <li>
@@ -186,6 +189,26 @@
   <div class="post-content"><p class="lead">In modern software testing, AI agents are revolutionizing how we write, run, and heal automated tests. However, most enterprise projects forbid using cloud-based AI models (like ChatGPT or Claude) due to strict data privacy and security policies.</p>
 
 <p>What if you could have the power of a Senior QA Agent living entirely on your local machine? In this guide, we will build a <strong>100% local AI testing stack</strong> that requires no internet connection and keeps your proprietary code private.</p>
+<h3 id="tested-on">Tested On<a hidden class="anchor" aria-hidden="true" href="#tested-on">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Computer</th>
+          <th>Specifications</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>MacBook Pro</strong></td>
+          <td>Apple M4 Pro chip, 24 GB RAM, connected to 2 external monitors</td>
+      </tr>
+      <tr>
+          <td><strong>Windows Desktop</strong></td>
+          <td>Intel Core i7-13700H (13th Gen), 32 GB RAM, Intel Iris Xe Graphics (15.9 GB shared memory), Windows 11 Pro</td>
+      </tr>
+  </tbody>
+</table>
+<p>Both setups ran the local LLM without any issues.</p>
 <hr>
 <h2 id="the-tech-stack">The Tech Stack<a hidden class="anchor" aria-hidden="true" href="#the-tech-stack">#</a></h2>
 <table>
@@ -337,20 +360,46 @@ npx playwright init-agents --loop=opencode
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "llama-cpp-local/gpt-oss-20b",
-  "session": {
-    "share": false
-  },
+  "small_model": "llama-cpp-local/qwen2.5-coder-14b",
+  "permission": "allow",
+  "theme": "opencode",
+  "share": "disabled",
   "tools": {
     "read": true,
     "edit": true,
+    "write": true,
+    "patch": true,
     "bash": true,
+    "grep": true,
+    "glob": true,
     "list": true,
-    "grep": true
+    "webfetch": true,
+    "todowrite": true,
+    "todoread": true
   },
   "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "Standard development agent for making file changes."
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
+    },
     "general": {
       "mode": "subagent",
-      "model": "llama-cpp-local/gpt-oss-20b"
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "General-purpose subagent for complex research and tasks."
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "llama-cpp-local/gpt-oss-20b",
+      "description": "Read-only subagent for exploring codebases."
     }
   },
   "mcp": {
@@ -359,24 +408,39 @@ npx playwright init-agents --loop=opencode
       "command": [
         "npx",
         "playwright",
-        "run-test-mcp-server",
-        "--headed"
+        "run-test-mcp-server"
       ],
-      "enabled": true,
-      "timeout": 300000
+      "enabled": true
     }
   },
   "provider": {
     "llama-cpp-local": {
       "npm": "@ai-sdk/openai-compatible",
+      "name": "Local llama.cpp",
       "options": {
         "baseURL": "http://127.0.0.1:8033/v1",
-        "apiKey": "not-needed"
+        "apiKey": "not-needed",
+        "timeout": 300000
       },
       "models": {
         "gpt-oss-20b": {
-          "name": "Local GPT-OSS",
-          "tool_call": true
+          "name": "GPT-OSS 20B",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
+        },
+        "qwen2.5-coder-14B": {
+          "name": "Qwen2.5-Coder-14B",
+          "tool_call": true,
+          "tools": {
+            "task": true,
+            "limit": {
+              "context": 131072,
+              "output": 4096
+            }
+          }
         }
       }
     }
