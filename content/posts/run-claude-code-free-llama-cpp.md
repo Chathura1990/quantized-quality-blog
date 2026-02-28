@@ -98,23 +98,23 @@ Now let's start the llama.cpp server with a coding-capable model. We'll use Qwen
 | -------------------------- | -------------- | ------------ |
 | **devstral-small-2 (24B)** | General coding | 16GB         |
 | **Qwen3-Coder (30B)**      | Complex tasks  | 24GB         |
-| **gpt-oss-20b**           | Fast responses | 12GB         |
+| **gpt-oss-20b**            | Fast responses | 12GB         |
 
 ---
 
 ## Step 4: Connect Claude Code
 
 Add these environment variables to (`~/.claude/llamacpp.setting.json`):
-
+`http://127.0.0.1:8033/` the same URL and port that llama.cpp is running.
 {{< terminal title="/llamacpp.setting.json" >}}
 {
-  "env": {
-    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8033/",
-    "ANTHROPIC_AUTH_TOKEN": "anthropic_api_key",
-    "API_TIMEOUT_MS": "3000000",
-    "CLAUDE_CODE_DIABLE_NONESSENTIAL_TRAFFIC": 1,
-    "ANTRHOPIC_MODEL": "default_model"
-  }
+"env": {
+"ANTHROPIC_BASE_URL": "http://127.0.0.1:8033/",
+"ANTHROPIC_AUTH_TOKEN": "anthropic_api_key",
+"API_TIMEOUT_MS": "3000000",
+"CLAUDE_CODE_DIABLE_NONESSENTIAL_TRAFFIC": 1,
+"ANTRHOPIC_MODEL": "default_model"
+}
 }
 
 {{< /terminal >}}

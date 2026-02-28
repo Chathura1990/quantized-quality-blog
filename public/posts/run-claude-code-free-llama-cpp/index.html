@@ -422,7 +422,8 @@ cp llama.cpp/build/bin/llama-\* llama.cpp/
 </table>
 <hr>
 <h2 id="step-4-connect-claude-code">Step 4: Connect Claude Code<a hidden class="anchor" aria-hidden="true" href="#step-4-connect-claude-code">#</a></h2>
-<p>Add these environment variables to (<code>~/.claude/llamacpp.setting.json</code>):</p>
+<p>Add these environment variables to (<code>~/.claude/llamacpp.setting.json</code>):
+<code>http://127.0.0.1:8033/</code> the same URL and port that llama.cpp is running.
 <div class="terminal-window">
     <div class="terminal-header">
         <div class="terminal-buttons">
@@ -436,13 +437,13 @@ cp llama.cpp/build/bin/llama-\* llama.cpp/
     <div class="terminal-body">
         <pre><code>
 {
-  "env": {
-    "ANTHROPIC_BASE_URL": "http://127.0.0.1:8033/",
-    "ANTHROPIC_AUTH_TOKEN": "anthropic_api_key",
-    "API_TIMEOUT_MS": "3000000",
-    "CLAUDE_CODE_DIABLE_NONESSENTIAL_TRAFFIC": 1,
-    "ANTRHOPIC_MODEL": "default_model"
-  }
+"env": {
+"ANTHROPIC_BASE_URL": "http://127.0.0.1:8033/",
+"ANTHROPIC_AUTH_TOKEN": "anthropic_api_key",
+"API_TIMEOUT_MS": "3000000",
+"CLAUDE_CODE_DIABLE_NONESSENTIAL_TRAFFIC": 1,
+"ANTRHOPIC_MODEL": "default_model"
+}
 }
 
 </code></pre>
@@ -457,7 +458,7 @@ cp llama.cpp/build/bin/llama-\* llama.cpp/
             setTimeout(() => { button.innerText = 'Copy'; }, 2000);
         });
     }
-</script>
+</script></p>
 <hr>
 <h2 id="step-5-run-claude-code">Step 5: Run Claude Code<a hidden class="anchor" aria-hidden="true" href="#step-5-run-claude-code">#</a></h2>
 <p>Now open the project directory &amp; launch Claude Code with your local model:</p>
