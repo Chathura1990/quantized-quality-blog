@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Quantized Quality by Chathura S.R</title>
+    <title>Tags on Quantized Quality</title>
     <link>http://localhost:1313/quantized-quality-blog/tags/</link>
-    <description>Recent content in Tags on Quantized Quality by Chathura S.R</description>
+    <description>Recent content in Tags on Quantized Quality</description>
     <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Jan 2026 10:30:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 10:30:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/quantized-quality-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
       <link>http://localhost:1313/quantized-quality-blog/tags/ai/</link>
-      <pubDate>Tue, 20 Jan 2026 10:30:00 +0530</pubDate>
+      <pubDate>Sat, 28 Feb 2026 10:30:00 +0530</pubDate>
       <guid>http://localhost:1313/quantized-quality-blog/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Claude-Code</title>
+      <link>http://localhost:1313/quantized-quality-blog/tags/claude-code/</link>
+      <pubDate>Sat, 28 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/quantized-quality-blog/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Free</title>
+      <link>http://localhost:1313/quantized-quality-blog/tags/free/</link>
+      <pubDate>Sat, 28 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/quantized-quality-blog/tags/free/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llama-Cpp</title>
+      <link>http://localhost:1313/quantized-quality-blog/tags/llama-cpp/</link>
+      <pubDate>Sat, 28 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/quantized-quality-blog/tags/llama-cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Local-Llm</title>
+      <link>http://localhost:1313/quantized-quality-blog/tags/local-llm/</link>
+      <pubDate>Sat, 28 Feb 2026 10:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/quantized-quality-blog/tags/local-llm/</guid>
       <description></description>
     </item>
     <item>
@@ -20,13 +48,6 @@
       <link>http://localhost:1313/quantized-quality-blog/tags/automation/</link>
       <pubDate>Tue, 20 Jan 2026 10:30:00 +0530</pubDate>
       <guid>http://localhost:1313/quantized-quality-blog/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Llama-Cpp</title>
-      <link>http://localhost:1313/quantized-quality-blog/tags/llama-cpp/</link>
-      <pubDate>Tue, 20 Jan 2026 10:30:00 +0530</pubDate>
-      <guid>http://localhost:1313/quantized-quality-blog/tags/llama-cpp/</guid>
       <description></description>
     </item>
     <item>
@@ -55,13 +76,6 @@
       <link>http://localhost:1313/quantized-quality-blog/tags/development/</link>
       <pubDate>Thu, 15 Jan 2026 10:30:00 +0530</pubDate>
       <guid>http://localhost:1313/quantized-quality-blog/tags/development/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Local-Llm</title>
-      <link>http://localhost:1313/quantized-quality-blog/tags/local-llm/</link>
-      <pubDate>Thu, 15 Jan 2026 10:30:00 +0530</pubDate>
-      <guid>http://localhost:1313/quantized-quality-blog/tags/local-llm/</guid>
       <description></description>
     </item>
     <item>

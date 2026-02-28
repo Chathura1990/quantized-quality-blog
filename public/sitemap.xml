@@ -3,33 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/quantized-quality-blog/tags/ai/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/categories/ai/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/tags/automation/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/categories/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/tags/claude-code/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/categories/development/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/tags/free/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/posts/run-claude-code-free-llama-cpp/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/tags/llama-cpp/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/tags/local-llm/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/posts/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/tags/</loc>
+    <lastmod>2026-02-28T10:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quantized-quality-blog/tags/automation/</loc>
     <lastmod>2026-01-20T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/tags/playwright/</loc>
     <lastmod>2026-01-20T10:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/posts/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/categories/quality-assurance/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/</loc>
-    <lastmod>2026-01-20T10:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/tags/</loc>
     <lastmod>2026-01-20T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/tags/testing/</loc>
@@ -41,13 +56,7 @@
     <loc>http://localhost:1313/quantized-quality-blog/tags/coding/</loc>
     <lastmod>2026-01-15T10:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/categories/development/</loc>
-    <lastmod>2026-01-15T10:30:00+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/tags/development/</loc>
-    <lastmod>2026-01-15T10:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/quantized-quality-blog/tags/local-llm/</loc>
     <lastmod>2026-01-15T10:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/quantized-quality-blog/posts/local-ai-coding-assistant/</loc>

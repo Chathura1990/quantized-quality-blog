@@ -1,6 +1,6 @@
 baseURL = 'https://Chathura1990.github.io/quantized-quality-blog/'
 languageCode = 'en-us'
-title = 'Quantized Quality by Chathura S.R'
+title = 'Quantized Quality'
 theme = 'PaperMod'
 
 [params]
