@@ -112,7 +112,7 @@ Add these environment variables to (`~/.claude/llamacpp.setting.json`):
 "ANTHROPIC_BASE_URL": "http://127.0.0.1:8033/",
 "ANTHROPIC_AUTH_TOKEN": "anthropic_api_key",
 "API_TIMEOUT_MS": "3000000",
-"CLAUDE_CODE_DIABLE_NONESSENTIAL_TRAFFIC": 1,
+"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1,
 "ANTRHOPIC_MODEL": "default_model"
 }
 }
